@@ -15,24 +15,49 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Container, Grid } from "@mui/material";
+import { navItems } from "../../utils/constanr";
 
-interface Props {
-  window?: () => Window;
-}
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
 
-const Header = (props: Props) => {
-  const { window } = props;
+const Header = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [scrolling, setScrolling] = React.useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+  React.useEffect(() => {
+    const handleScroll = () => {
+      
+      // Check if window is defined before accessing properties
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > 0) {          
+          setScrolling(true);
+        } else {
+          setScrolling(false);
+        }
+      }
+    };
+    // Explicitly assert the type of window as Window
+    const currentWindow = window as Window;
+
+    // Check if window is defined before adding the event listener
+    if (typeof currentWindow !== 'undefined') {
+      currentWindow.addEventListener('scroll', handleScroll);
+    }
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      // Check if window is defined before removing the event listener
+      if (typeof currentWindow !== 'undefined') {
+        currentWindow.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} className="text-center">
       <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography>
@@ -40,7 +65,7 @@ const Header = (props: Props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton className="text-center">
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -49,25 +74,25 @@ const Header = (props: Props) => {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
+  const container = typeof window !== 'undefined' ? () => window.document.body : undefined;
   return (
     <section>
-      <Box sx={{ display: "flex" }}>
+      <Box className='flex'>
         <CssBaseline />
         <AppBar
+        sx={{backgroundColor:scrolling ? '#161616' : 'transparent', boxShadow:'none'}}
           component="nav"
-          sx={{ display: "flex" }}
+          className='flex'
         >
-          <Toolbar sx={{ justifyContent: "space-between", width: "100%" }}>
-            <Container>
+          <Toolbar className="justify-between w-full">
+            <Container className="flex">
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
+                className="mr-2"
+                sx={{ display: { sm: "none" } }}
               >
                 <MenuIcon />
               </IconButton>
@@ -76,22 +101,23 @@ const Header = (props: Props) => {
                   <Typography
                     variant="h6"
                     component="div"
+                    className="text-black"
                     sx={{ display: { xs: "none", sm: "block" } }}
                   >
                     MUI
                   </Typography>
                 </Grid>
-                <Grid item xs={4} sx={{ display: "flex", justifyContent: "center" }}>
+                <Grid item xs={4} className="flex justify-center">
                   <Box sx={{ display: { xs: "none", sm: "flex" } }}>
                     {navItems.map((item) => (
-                      <Button key={item} sx={{ color: "#fff" }}>
+                      <Button key={item} className="text-black">
                         {item}
                       </Button>
                     ))}
                   </Box>
                 </Grid>
-                <Grid item xs={4} sx={{ display: "flex", justifyContent: "flex-end" }}>
-                 <Button variant="contained">Download</Button>
+                <Grid item xs={4} className="flex justify-end">
+                 <Button variant="contained" className="bg-neutral-300 text-black">Download</Button>
                 </Grid>
               </Grid>
             </Container>
