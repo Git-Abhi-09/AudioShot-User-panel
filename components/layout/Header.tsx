@@ -16,6 +16,16 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Container, Grid } from "@mui/material";
 import { navItems } from "../../utils/constanr";
+import { Cantarell } from "next/font/google";
+import logo from '../../Assets/audioshotsLogo.png';
+import Image from "next/image";
+
+const audio = Cantarell({
+weight: "400",
+subsets: ["latin"],
+preload: true,
+});
+
 
 
 const drawerWidth = 240;
@@ -59,7 +69,7 @@ const Header = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} className="text-center">
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        <Image src={logo} alt="Audioshot"/>
       </Typography>
       <Divider />
       <List>
@@ -80,7 +90,7 @@ const Header = () => {
       <Box className='flex'>
         <CssBaseline />
         <AppBar
-        sx={{backgroundColor:scrolling ? '#161616' : 'transparent', boxShadow:'none'}}
+        sx={{backgroundColor:scrolling ? '#F5F7F8' : 'transparent', boxShadow:'none'}}
           component="nav"
           className='flex'
         >
@@ -92,7 +102,7 @@ const Header = () => {
                 edge="start"
                 onClick={handleDrawerToggle}
                 className="mr-2"
-                sx={{ display: { sm: "none" } }}
+                sx={{ display: { sm: "none" },color:'#000' }}
               >
                 <MenuIcon />
               </IconButton>
@@ -104,20 +114,24 @@ const Header = () => {
                     className="text-black"
                     sx={{ display: { xs: "none", sm: "block" } }}
                   >
-                    MUI
+                            <Image src={logo} height="35" width="35" alt="Audioshot" style={{borderRadius:'5px'}}/>
+
                   </Typography>
                 </Grid>
                 <Grid item xs={4} className="flex justify-center">
-                  <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+                  <Box className={`${audio.className}`} sx={{ display: { xs: "none", sm: "flex" } }}>
                     {navItems.map((item) => (
                       <Button key={item} className="text-black">
+                        <Typography style={{fontFamily:'Cantarell'}}>
                         {item}
+                        </Typography>
+                        
                       </Button>
                     ))}
                   </Box>
                 </Grid>
                 <Grid item xs={4} className="flex justify-end">
-                 <Button variant="contained" className="bg-neutral-300 text-black">Download</Button>
+                 <Button variant="contained" style={{fontFamily:'Cantarell'}} className="bg-neutral-300 text-black">Download</Button>
                 </Grid>
               </Grid>
             </Container>

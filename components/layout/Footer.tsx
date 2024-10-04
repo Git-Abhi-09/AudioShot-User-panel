@@ -4,13 +4,13 @@ import {navItems} from '../../utils/constanr';
 
 const Footer = () => {
 	return (
-		<footer className="fixed bottom-0 bg-neutral-300 w-full">
+		<footer style={{backgroundColor:'#F5F7F8'}} className=" w-full">
 			<Container>
 				<Grid container>
 					<Grid item xs={12} md={4}>
 						<Box>
 							<Box py={3}>
-								<Typography variant="h4" sx={{textAlign:{xs:'center'}}}>Audioshots</Typography>
+								<Typography variant="h4" sx={{textAlign:{xs:'center',md:'left'}}}>Audioshots</Typography>
 							</Box>
 							<Divider className="mb-7" />
 							<Typography>
@@ -33,7 +33,7 @@ const Footer = () => {
 					<Grid item xs={12} md={4}>
 						<Box className="mb-7">
 							<Box py={3}>
-								<Typography variant="h4" sx={{textAlign:{xs:'center'}}}>Contact Us</Typography>
+								<Typography variant="h4" sx={{textAlign:{xs:'center',md:'left'}}}>Contact Us</Typography>
 							</Box>
 							<Divider className="mb-7" />
 							<Typography>

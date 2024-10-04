@@ -1,0 +1,181 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 10vh;
+    width: 10vh;
+}
+
+.logo Image{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+.title{
+    margin-top: 0%;
+    font-size: 1.5rem;
+    margin: 5px;
+    color: #1D1D1F;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.caption{
+    height: 10vh;
+    width: 45vw;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.description{
+    height: auto;
+    width: 60vw;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* image design part */
+.mainImgs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+.imgContaner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.img2{
+    height: 60vh;
+    width: 15vw;
+    position: relative;
+}
+.img2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.img1{
+    height: 50vh;
+    width: 20vw;
+}
+.img1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.img3{
+    height: 50vh;
+    width: 20vw;
+}
+.img3 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.img0{
+    height: 40vh;
+    width: 10vw;
+}
+.img0 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.img4{
+    height: 40vh;
+    width: 10vw;
+}
+.img4 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 450px) {
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 15vh;
+    }
+    .logo{
+        height: 8vh;
+        width: 15vw;
+    }
+    .title{
+        font-size: 1rem;
+        color: #1D1D1F;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .caption{
+        height: 0vh;
+        width: 70vw;
+        color: rgb(0, 0, 0);
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .description{
+        height: auto;
+        width: 80vw;
+        margin-top: 8rem;
+        font-size: 1rem;
+        text-align: center;
+        color: black;
+    }
+}
+
+@media only screen and (min-width:450px) and (max-width: 850px) {
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 15vh;
+    }
+    .logo{
+        height: 10vh;
+        width: 20vw;
+    }
+    .title{
+        font-size: 1.5rem;
+        color: #1D1D1F;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .caption{
+        height: 0vh;
+        width: 80vw;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .description{
+        height: auto;
+        width: 80vw;
+        margin-top: 6rem;
+        font-size: 1.5rem;
+        text-align: center;
+        color: black;
+    }
+}
