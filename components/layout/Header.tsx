@@ -16,17 +16,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Container, Grid } from "@mui/material";
 import { navItems } from "../../utils/constanr";
-import { Cantarell } from "next/font/google";
 import logo from '../../Assets/audioshotsLogo.png';
 import Image from "next/image";
-
-const audio = Cantarell({
-weight: "400",
-subsets: ["latin"],
-preload: true,
-});
-
-
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import VerticalAlignBottomIcon from '@mui/icons-material/VerticalAlignBottom';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 const drawerWidth = 240;
 
@@ -75,8 +69,8 @@ const Header = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton className="text-center">
-              <ListItemText primary={item} />
+            <ListItemButton className="text-center primary-font">
+              <ListItemText primary={item} className='primary-font' />
             </ListItemButton>
           </ListItem>
         ))}
@@ -119,10 +113,10 @@ const Header = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs={4} className="flex justify-center">
-                  <Box className={`${audio.className}`} sx={{ display: { xs: "none", sm: "flex" } }}>
+                  <Box sx={{ display: { xs: "none", sm: "flex" } }}>
                     {navItems.map((item) => (
-                      <Button key={item} className="text-black">
-                        <Typography style={{fontFamily:'Cantarell'}}>
+                      <Button key={item} className="text-black justify-between">
+                        <Typography className='primary-font capitalize'>
                         {item}
                         </Typography>
                         
@@ -131,7 +125,7 @@ const Header = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={4} className="flex justify-end">
-                 <Button variant="contained" style={{fontFamily:'Cantarell'}} className="bg-neutral-300 text-black">Download</Button>
+                 <Button variant="outlined" style={{fontFamily:'Cantarell'}} className="border-0 border-b border-black text-black capitalize">Download<SaveAltIcon className="pl-1 ml-1"/></Button>
                 </Grid>
               </Grid>
             </Container>
