@@ -141,6 +141,64 @@
         text-align: center;
         color: black;
     }
+    .imgContaner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0rem;
+    }
+    .mainImgs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5vh;
+    }
+    .img2{
+        height: 30vh;
+        width: 40vw;
+    }
+    .img2 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img1{
+        height: 25vh;
+        width: 30vw;
+    }
+    .img1 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img3{
+        height: 25vh;
+        width: 30vw;
+    }
+    .img3 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img0{
+        height: 0vh;
+        width: 0vw;
+    }
+    .img0 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img4{
+        height: 0vh;
+        width: 0vw;
+    }
+    .img4 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
 }
 
 @media only screen and (min-width:450px) and (max-width: 850px) {
@@ -177,5 +235,56 @@
         font-size: 1.5rem;
         text-align: center;
         color: black;
+    }
+    .mainImgs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5vh;
+    }
+    .img2{
+        height: 35vh;
+        width: 20vw;
+    }
+    .img2 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img1{
+        height: 40vh;
+        width: 17vw;
+    }
+    .img1 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img3{
+        height: 40vh;
+        width: 17vw;
+    }
+    .img3 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img0{
+        height: 30vh;
+        width: 12vw;
+    }
+    .img0 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    .img4{
+        height: 30vh;
+        width: 12vw;
+    }
+    .img4 img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
     }
 }

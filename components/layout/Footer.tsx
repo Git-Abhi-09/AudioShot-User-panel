@@ -8,7 +8,7 @@ const Footer = () => {
 		<footer style={{backgroundColor:'#F5F7F8'}} className='w-full'>
 			<Container>
 				<Grid container>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={4} md={4}>
 						<Box>
 							<Box py={3}>
 								<Typography variant="h4" className='primary-font' sx={{textAlign:{xs:'center',md:'left'}}}>Audioshots</Typography>
@@ -21,9 +21,9 @@ const Footer = () => {
 							</Typography>
 						</Box>
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={4} md={4}>
 						<Box p={3} className="flex items-center justify-center">
-							<Typography variant="h4" className='primary-font'>Services</Typography>
+							<Typography variant="h5" className='primary-font'>Services</Typography>
 						</Box>
 						<Box className="flex items-center justify-center flex-col gap-4">
 							{navItems.map((item, index) => {
@@ -31,10 +31,10 @@ const Footer = () => {
 							})}
 						</Box>
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={4} md={4}>
 						<Box className="mb-7">
 							<Box py={3}>
-								<Typography variant="h4" className='primary-font' sx={{textAlign:{xs:'center',md:'left'}}}>Contact Us</Typography>
+								<Typography variant="h5" className='primary-font' sx={{textAlign:{xs:'center',md:'left'}}}>Contact Us</Typography>
 							</Box>
 							<Divider className="mb-7" />
 							<Typography className='primary-font'>
