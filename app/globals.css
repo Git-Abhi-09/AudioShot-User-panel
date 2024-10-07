@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: 'Cantarell';
-  src: url('../app/fonts/Cantarell-Regular.ttf') format('truetype'),
-       url('../app/fonts/Cantarell-Regular.ttf') format('truetype');
+  src:  url('../app/fonts/Cantarell-Regular.ttf') format('truetype'),
+        url('../app/fonts/Cantarell-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }

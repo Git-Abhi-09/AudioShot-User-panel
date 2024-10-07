@@ -125,7 +125,7 @@ const Header = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={4} sx={{position:'relative',left:{xs:'6px'}}} className="flex justify-end">
-                 <Button variant="outlined" style={{fontFamily:'Cantarell'}} className="border-0 border-b border-black text-black capitalize">Download<SaveAltIcon className="pl-1 ml-1"/></Button>
+                <Button variant="outlined" style={{fontFamily:'Cantarell'}} className="border-0 border-b border-black text-black capitalize">Download<SaveAltIcon className="pl-1 ml-1"/></Button>
                 </Grid>
               </Grid>
             </Container>

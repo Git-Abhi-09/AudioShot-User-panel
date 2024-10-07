@@ -32,6 +32,9 @@ const img2A = useRef(null);
 const img3A = useRef(null);
 const img4A = useRef(null);
 const img5A = useRef(null);
+const caption1 = useRef(null);
+const caption2 = useRef(null);
+const caption3 = useRef(null);
 
 useGSAP(() => {
     tl.from(logoImg.current, {
@@ -130,6 +133,46 @@ gsap.from([img5A.current],{
                 once:true
             }
 })
+
+gsap.from(caption1.current , {
+    y:300,
+    Opacity:0,
+    scale:0.5,
+    duration:0.7,
+    delay:0.5,
+    scrollTrigger:{
+        trigger:[caption1.current],
+        start: 'top-=650 center',
+        end: 'bottom-=1250 top',
+        scrub:1
+    }
+})
+gsap.from(caption2.current , {
+    y:300,
+    Opacity:0,
+    scale:0.5,
+    duration:0.7,
+    delay:0.5,
+    scrollTrigger:{
+        trigger:[caption2.current],
+        start: 'top-=650 center',
+        end: 'bottom-=1250 top',
+        scrub:1
+    }
+})
+gsap.from(caption3.current , {
+    y:300,
+    Opacity:0,
+    scale:0.5,
+    duration:0.7,
+    delay:0.5,
+    scrollTrigger:{
+        trigger:[caption3.current],
+        start: 'top-=650 center',
+        end: 'bottom-=1250 top',
+        scrub:1
+    }
+})
 });
 return (
     <section className="mb-7">
@@ -144,7 +187,7 @@ return (
         <div ref={appName} className={`${styles.title} ${audio.className}`}>
         <p>Audio Shots</p>
         </div>
-        <div ref={captionText} className={`${styles.caption}`}>
+        <div ref={captionText} className={`${styles.caption} ${audio.className}`}>
         <h1>Your voice, your podcasts anytime, anywhere</h1>
         </div>
         <div
@@ -175,6 +218,17 @@ return (
         <div ref={img5A} className={styles.img4}>
         <Image src={img5} alt="" />
         </div>
+        </div>
+    </div>
+    <div ref={caption1} className={`${styles.audioCaption} ${audio.className}`}>
+        <div className={styles.firstCaption}>
+            <h1><span style={{color:'#59CE8F'}}>Short on Time? Big on Audio?</span> Listen to the Best of Podcasts, News, and Entertainment in a Snap!</h1>
+        </div>
+        <div ref={caption2} className={styles.firstCaption}>
+            <h1><span style={{color:'#59CE8F'}}>Stay updated with trending audio clips in real time.</span> Never miss out on what’s hot.</h1>
+        </div>
+        <div ref={caption3} className={styles.firstCaption}>
+            <h1><span style={{color:'#59CE8F'}}>Discover shorts from diverse categories like</span> news, comedy, tech, and more—something for every mood.</h1>
         </div>
     </div>
     </section>
