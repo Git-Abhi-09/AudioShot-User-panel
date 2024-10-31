@@ -6,11 +6,11 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Cantarell } from "next/font/google";
-import img1 from "../../Assets/A-1.png";
-import img2 from "../../Assets/A-1.png";
-import img3 from "../../Assets/iPhoneImg.png";
-import img4 from "../../Assets/A-2.png";
-import img5 from "../../Assets/A-2.png";
+import image1 from "../../Assets/img1.png";
+import image2 from "../../Assets/img2.png";
+import image3 from "../../Assets/img3.png";
+import image4 from "../../Assets/img4.png";
+import image5 from "../../Assets/img5.png";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,11 +27,11 @@ const logoImg = useRef(null);
 const appName = useRef(null);
 const captionText = useRef(null);
 const discrptionText = useRef(null);
-const img1A = useRef(null);
-const img2A = useRef(null);
-const img3A = useRef(null);
-const img4A = useRef(null);
-const img5A = useRef(null);
+const image1A = useRef(null);
+const image2A = useRef(null);
+const image3A = useRef(null);
+const image4A = useRef(null);
+const image5A = useRef(null);
 const caption1 = useRef(null);
 const caption2 = useRef(null);
 const caption3 = useRef(null);
@@ -69,7 +69,7 @@ useGSAP(() => {
     },
     "=-0.5"
     );
-    tl.from(img3A.current, {
+    tl.from(image3A.current, {
         opacity: 0,
         scale: 0.5,
         duration: 0.5,
@@ -81,53 +81,53 @@ useGSAP(() => {
         //     once:true
         // }
     })
-    gsap.from([img2A.current],{
+    gsap.from([image2A.current],{
     x:300,
     opacity:0,
     scale:0.5,
     duration:1,
     dealy:0.5,
     scrollTrigger:{
-                trigger:[img2A.current],
+                trigger:[image2A.current],
                 start: 'top-=200 center',
                 end: 'bottom-=30 top',
                 once:true
             }
 })
-gsap.from([ img4A.current],{
+gsap.from([ image4A.current],{
     x:-300,
     opacity:0,
     scale:0.5,
     duration:1,
     dealy:0.5,
     scrollTrigger:{
-                trigger:[img4A.current],
+                trigger:[image4A.current],
                 start: 'top-=200 center',
                 end: 'bottom-=30 top',
                 once:true
             }
 })
-    gsap.from([img1A.current],{
+    gsap.from([image1A.current],{
     x:300,
     opacity:0,
     scale:0.5,
     duration:1,
     dealy:1,
     scrollTrigger:{
-                trigger:[img1A.current],
+                trigger:[image1A.current],
                 start: 'top-=200 center',
                 end: 'bottom-=30 top',
                 once:true
             }
 })
-gsap.from([img5A.current],{
+gsap.from([image5A.current],{
     x:-300,
     opacity:0,
     scale:0.5,
     duration:1,
     dealy:1,
     scrollTrigger:{
-                trigger:[img5A.current],
+                trigger:[image5A.current],
                 start: 'top-=200 center',
                 end: 'bottom-=30 top',
                 once:true
@@ -203,20 +203,20 @@ return (
     </div>
     <div className={styles.mainImgs}>
         <div className={styles.imgContaner}>
-        <div ref={img1A} className={styles.img0}>
-            <Image src={img1} alt="" />
+        <div ref={image1A} className={styles.img0}>
+            <Image src={image1} alt="" />
         </div>
-        <div ref={img2A} className={styles.img1}>
-            <Image src={img2} alt="" />
+        <div ref={image2A} className={styles.img1}>
+            <Image src={image2} alt="" />
         </div>
-        <div ref={img3A} className={styles.img2}>
-            <Image src={img3} alt="" />
+        <div ref={image3A} className={styles.img2}>
+            <Image src={image3} alt="" />
         </div>
-        <div ref={img4A} className={styles.img3}>
-            <Image src={img4} alt="" />
+        <div ref={image4A} className={styles.img3}>
+            <Image src={image4} alt="" />
         </div>
-        <div ref={img5A} className={styles.img4}>
-        <Image src={img5} alt="" />
+        <div ref={image5A} className={styles.img4}>
+        <Image src={image5} alt="" />
         </div>
         </div>
     </div>

@@ -3,6 +3,7 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import "./globals.css";
 import { Cantarell } from "next/font/google";
+import Home from '../components/common/HomePage';
 
 export const metadata = {
   title: "Audioshots",
@@ -24,7 +25,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className={audio.className}>
         <Header />
-        {children}
+        {/* {children} */}
+        <Home/>
         <Footer />
       </body>
     </html>
