@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import "./globals.css";
