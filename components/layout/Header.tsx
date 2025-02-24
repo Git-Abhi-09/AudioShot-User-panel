@@ -16,7 +16,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Container, Grid } from "@mui/material";
 import { navItems } from "../../utils/constanr";
-
+import logo from '../../Assets/audioshotsLogo.png';
+import Image from "next/image";
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import VerticalAlignBottomIcon from '@mui/icons-material/VerticalAlignBottom';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 const drawerWidth = 240;
 
@@ -59,14 +63,14 @@ const Header = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} className="text-center">
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        <Image src={logo} alt="Audioshot"/>
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton className="text-center">
-              <ListItemText primary={item} />
+            <ListItemButton className="text-center primary-font">
+              <ListItemText primary={item} className='primary-font' />
             </ListItemButton>
           </ListItem>
         ))}
@@ -80,7 +84,7 @@ const Header = () => {
       <Box className='flex'>
         <CssBaseline />
         <AppBar
-        sx={{backgroundColor:scrolling ? '#161616' : 'transparent', boxShadow:'none'}}
+        sx={{backgroundColor:scrolling ? '#F5F7F8' : 'transparent', boxShadow:'none'}}
           component="nav"
           className='flex'
         >
@@ -92,7 +96,7 @@ const Header = () => {
                 edge="start"
                 onClick={handleDrawerToggle}
                 className="mr-2"
-                sx={{ display: { sm: "none" } }}
+                sx={{ display: { sm: "none" },color:'#000' }}
               >
                 <MenuIcon />
               </IconButton>
@@ -104,20 +108,24 @@ const Header = () => {
                     className="text-black"
                     sx={{ display: { xs: "none", sm: "block" } }}
                   >
-                    MUI
+                            <Image src={logo} height="35" width="35" alt="Audioshot" style={{borderRadius:'5px'}}/>
+
                   </Typography>
                 </Grid>
                 <Grid item xs={4} className="flex justify-center">
                   <Box sx={{ display: { xs: "none", sm: "flex" } }}>
                     {navItems.map((item) => (
-                      <Button key={item} className="text-black">
+                      <Button key={item} className="text-black justify-between">
+                        <Typography className='primary-font capitalize'>
                         {item}
+                        </Typography>
+                        
                       </Button>
                     ))}
                   </Box>
                 </Grid>
-                <Grid item xs={4} className="flex justify-end">
-                 <Button variant="contained" className="bg-neutral-300 text-black">Download</Button>
+                <Grid item xs={4} sx={{position:'relative',left:{xs:'6px'}}} className="flex justify-end">
+                <Button variant="outlined" style={{fontFamily:'Cantarell'}} className="border-0 border-b border-black text-black capitalize">Download<SaveAltIcon className="pl-1 ml-1"/></Button>
                 </Grid>
               </Grid>
             </Container>
